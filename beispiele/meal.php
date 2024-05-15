@@ -8,7 +8,7 @@ const GET_PARAM_MIN_STARS = 'search_min_stars';
 const GET_PARAM_SEARCH_TEXT = 'search_text';
 
 /**
- * List of all allergens.
+ * List of all allergens. hallo
  */
 $allergens = [
     11 => 'Gluten',
