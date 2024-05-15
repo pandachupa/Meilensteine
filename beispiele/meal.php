@@ -76,6 +76,7 @@ if (!empty($_GET[GET_show_description]) ||$_GET[GET_show_description]!=0){
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="de">
     <head>
