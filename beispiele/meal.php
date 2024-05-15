@@ -7,6 +7,9 @@
 const GET_PARAM_MIN_STARS = 'search_min_stars';
 const GET_PARAM_SEARCH_TEXT = 'search_text';
 
+const GET_show_description = 'show_description';
+
+
 /**
  * List of all allergens. hallo, du da
  */
@@ -44,9 +47,9 @@ $ratings = [
 
 $showRatings = [];
 if (!empty($_GET[GET_PARAM_SEARCH_TEXT])) {
-    $searchTerm = $_GET[GET_PARAM_SEARCH_TEXT];
+    $searchTerm = strtolower($_GET[GET_PARAM_SEARCH_TEXT]);
     foreach ($ratings as $rating) {
-        if (strpos($rating['text'], $searchTerm) !== false) {
+        if (strpos(strtolower($rating['text']), $searchTerm) !== false) {
             $showRatings[] = $rating;
         }
     }
@@ -67,6 +70,9 @@ function calcMeanStars(array $ratings) : float {
         $sum += $rating['stars'] / count($ratings);
     }
     return $sum / count ($ratings);
+}
+if (!empty($_GET[GET_show_description]) ||$_GET[GET_show_description]!=0){
+    $showDescription = $meal['description'];
 }
 
 ?>
