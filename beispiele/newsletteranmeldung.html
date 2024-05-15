@@ -1,0 +1,66 @@
+<!DOCTYPE html> <!--keine Fehler-->
+<!--
+ - Praktikum DBWT. Autoren:
+ - Lara, Devos, 3649406
+ - Kyra, Becker, 3594605
+ -->
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmeldung</title>
+</head>
+<body>
+
+<!--------------Ueberschrift / Titel---------------------->
+<h2>Anmeldung</h2>
+<form action="beispiele/formdata.html" method="post">
+    <fieldset>
+
+        <!------------------------ Anrede -------------------------->
+        <label> Anrede </label> <br>
+
+        <label>
+            <input type="radio" name="anrede" value="Frau"> Frau
+        </label> <br>
+
+        <label>
+            <input type="radio" name="anrede" value="Herr"> Herr
+        </label> <br><br>
+
+
+        <!------------------------ Vorname -------------------------->
+
+        <label for="vorname">Vorname*:</label> <br>
+        <input type="text" id="vorname" name="vorname" required placeholder="Bitte geben Sie Ihren Vornamen ein"> <br><br>
+
+        <!------------------------ Nachname -------------------------->
+        <label for="nachname">Nachname*:</label> <br>
+        <input type="text" id="nachname" name="nachname" required placeholder="Bitte geben Sie Ihren Nachnamen ein"> <br><br>
+
+        <!------------------------ Email -------------------------->
+        <label for="email">E-Mail*:</label> <br>
+        <input type="email" id="email" name="email" required placeholder="Bitte geben Sie Ihre Email ein"> <br><br>
+
+        <!------------------------ Benachrichtigungsinterval -------------------------->
+        <label for="interval">Benachrichtigungsinterval:</label> <br>
+        <select id="interval" name="interval">
+            <option value="tag">Täglich</option>
+            <option value="woche">Wöchentlich</option>
+            <option value="monat">Monatlich</option>
+        </select><br><br>
+
+        <!------------------------ Datenschutz -------------------------->
+        <input type="checkbox" id="datenschutz" name="datenschutz" required>
+        <label for="datenschutz">Datenschutzhinweise gelesen</label><br><br>
+
+        <!------------------------ Abschicken Button -------------------------->
+        <input type="submit" value="Abschicken">
+        <p>*) Eingaben sind Pflicht</p>
+
+
+    </fieldset>
+
+</form>
+</body>
+</html>
