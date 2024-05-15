@@ -4,8 +4,5 @@
  - Kyra, Becker, 3594605
  -->
 <?php
-
-
-
 echo "Erstes PHP-Skript <br>";
 phpinfo();
