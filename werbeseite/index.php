@@ -1,16 +1,5 @@
 <?php
-function zaehler()
-{$file = fopen('./Zahl.txt', 'w+');
-    if (!$file) {
-        die('Öffnen fehlgeschlagen');
-    }
-        $line = fgets($file);
-    echo line;
-        fwrite($file, $line);
-    fclose($file);
-
-}
-
+echo "Test";
 ?>
 <!DOCTYPE html>
 <html lang="de">
