@@ -137,7 +137,7 @@ include 'gerichte_array.php';
                     <td><?php echo $gericht['preisExtern']; ?></td>
                 </tr>
                 <tr>
-                    <td colspan="3"><img src="werbeseite/img/<?php echo $gericht['bild']; ?>" alt="<?php echo $gericht['name']; ?>" class="gerichtsbild"></td>
+                    <td colspan="3"><img src="werbeseite/<?php echo $gericht['bild']; ?>" alt="<?php echo $gericht['name']; ?>" class="gerichtsbild"></td>
                 </tr>
             <?php endforeach; ?>
         </table>
