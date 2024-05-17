@@ -1,15 +1,16 @@
 <?php
-// Pfad zur Datei mit den Besucherzählungen
-$visitorCountFilePath = 'besucher_zaehler.txt';
+// Pfad zur Datei mit den visitorcounts
+$visitor_count_path = 'besucher_zaehler.txt';
 
-// Pfad zur Datei mit den Gerichtsdaten
-$mealDataFilePath = 'meal_data.txt';
+// Pfad zur Datei mit den Gerichten
+$meal_data_path = 'meal_data.txt';
 
 // Pfad zur Datei mit den Newsletter-Anmeldungen
-$newsletterSubscribersFilePath = 'newsletter_anmeldungen.txt';
+$newsletter_subscribers_path = 'newsletter_anmeldungen.txt';
 
-// Funktion zur Erhöhung des Besucherzählers
-function incrementVisitorCount($filePath) {
+
+// Erhöhung des visitorcounts
+function increment_visitor_count($filePath) {
     if (file_exists($filePath) && is_writable($filePath)) {
         // Lesen der aktuellen Besucherzahl
         $count = (int)file_get_contents($filePath);
@@ -20,8 +21,8 @@ function incrementVisitorCount($filePath) {
     }
 }
 
-// Funktion zur Anzeige der Besucherzahl
-function displayVisitorCount($filePath) {
+// Anzeige der visitorcount
+function display_visitor_count($filePath) {
     if (file_exists($filePath)) {
         // Lesen der aktuellen Besucherzahl
         $count = (int)file_get_contents($filePath);
@@ -30,18 +31,19 @@ function displayVisitorCount($filePath) {
     }
 }
 
-// Funktion zur Anzeige der Anzahl der gespeicherten Gerichte
-function displayMealCount($filePath) {
+
+// Anzeige --> Anzahl der gespeicherten Gerichte
+function display_meal_count($filePath) {
     if (file_exists($filePath)) {
-        // Lesen der Gerichtsdaten und Zählen der Zeilen
+        // Gerichte einlesen und zählen der Zeilen
         $count = count(file($filePath, FILE_SKIP_EMPTY_LINES));
         // Ausgabe der Anzahl der Gerichte
         echo "<p>Anzahl Gerichte: $count</p>";
     }
 }
 
-// Funktion zur Anzeige der Anzahl der Newsletter-Anmeldungen
-function displayNewsletterSubscribersCount($filePath) {
+// Anzeige der Anzahl von den Newsletter-Anmeldungen
+function display_newsletter_subscribers_count($filePath) {
     if (file_exists($filePath)) {
         // Lesen der Anmeldungen zum Newsletter und Zählen der Zeilen
         $count = count(file($filePath, FILE_SKIP_EMPTY_LINES));
@@ -50,8 +52,9 @@ function displayNewsletterSubscribersCount($filePath) {
     }
 }
 
-// Inkrementieren des Besucherzählers bei jedem Seitenaufruf
-incrementVisitorCount($visitorCountFilePath);
+
+// Besucherzähler +1 bei jedem Seitenaufruf
+increment_visitor_count($visitor_count_path);
 ?>
 
     <!DOCTYPE html>
@@ -61,16 +64,21 @@ incrementVisitorCount($visitorCountFilePath);
         <title>Werbeseite</title>
     </head>
     <body>
+
     <h1>Werbeseite</h1>
     <h2>Zahlen</h2>
+
     <?php
-    // Anzeige der Besucherzahl
-    displayVisitorCount($visitorCountFilePath);
+    // show visitorcount
+    display_visitor_count($visitor_count_path);
+
     // Anzeige der Anzahl der gespeicherten Gerichte
-    displayMealCount($mealDataFilePath);
-    // Anzeige der Anzahl der Newsletter-Anmeldungen
-    displayNewsletterSubscribersCount($newsletterSubscribersFilePath);
+    display_meal_count($meal_data_path);
+
+    // Anzahl Newsletter supscriptions
+    display_newsletter_subscribers_count($newsletter_subscribers_path);
     ?>
+
     </body>
     </html>
 <?php
