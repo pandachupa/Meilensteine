@@ -1,3 +1,8 @@
+<!--
+ - Praktikum DBWT. Autoren:
+ - Lara, Devos, 3649406
+ - Kyra, Becker, 3594605
+ -->
 <?php //Jedes mal wenn die Seite im Browser aufgerufen wird kommt ein neuer Eintrag
 date_default_timezone_set('Europe/Berlin');
 
