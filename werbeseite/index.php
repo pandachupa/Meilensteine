@@ -1,23 +1,17 @@
 <?php
-function zaehler()
-{$file = fopen('./Zahl.txt', 'w+');
-    if (!$file) {
-        die('Öffnen fehlgeschlagen');
-    }
-        $line = fgets($file);
-    echo line;
-        fwrite($file, $line);
-    fclose($file);
-
-}
-
+include 'gerichte_array.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <title>Ihre E-Mensa</title>
     <style>
+        .gerichtsbild {
+            width: 200px;
+            height: auto;
+        }
         body {
             border: solid 1px black;
             font-family: 'Comic Sans MS', cursive;
@@ -113,7 +107,6 @@ function zaehler()
     </nav>
 </header>
 <main>
-
     <img src="mensa_essen.jpg" alt="Platzhalterbild" width="800px" height="400px">
 
     <h1 id="eins">Bald gibt es Essen auch online ;)</h1>
@@ -128,30 +121,26 @@ function zaehler()
             dapibus in, viverra quis, feugiat a, tellus.</p>
     </fieldset>
 
-    <h1 id="zwei">Köstlichkeiten, die Sie erwarten</h1>
+        <!-- Aufgabe 6 -->
+        <h1>Köstlichkeiten, die Sie erwarten</h1>
 
-    <table class="köstlichkeiten">
-        <tr>
-            <td></td>
-            <td>Preis Intern</td>
-            <td>Preis extern</td>
-        </tr>
-        <tr>
-            <td>Rindfleisch mit Bambus, Kaiserschoten und rotem Paprika, dazu Mie Nudeln</td>
-            <td>3,50</td>
-            <td>6,20</td>
-        </tr>
-        <tr>
-            <td>Spinatrisotto mit Samosateigecken und gemischter Salat</td>
-            <td>2,90</td>
-            <td>5,30</td>
-        </tr>
-        <tr>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-        </tr>
-    </table>
+        <table class="köstlichkeiten">
+            <tr>
+                <td></td>
+                <td>Preis Intern</td>
+                <td>Preis extern</td>
+            </tr>
+            <?php foreach ($gerichte as $gericht): ?>
+                <tr>
+                    <td><?php echo $gericht['name']; ?></td>
+                    <td><?php echo $gericht['preisIntern']; ?></td>
+                    <td><?php echo $gericht['preisExtern']; ?></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><img src="werbeseite/<?php echo $gericht['bild']; ?>" alt="<?php echo $gericht['name']; ?>" class="gerichtsbild"></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
 
     <h1 id="drei">E-Mensa in Zahlen</h1>
     <div class="Zahlen">
@@ -160,7 +149,7 @@ function zaehler()
         <p>z Speisen</p>
     </div>
 
-    <!--interesse geweckt-->
+    <!--interesse geweckt, Formular-->
 
     <h1 id="vier">Interesse geweckt? Wir informieren Sie!</h1>
 
@@ -196,6 +185,7 @@ function zaehler()
 
     <h1 class="Ende">Wir freuen uns auf Ihren Besuch!</h1>
 </main>
+
 <hr>
 <footer id="foot">
     <div class="footer_inhalt">(c) E-Mensa GmbH</div>
