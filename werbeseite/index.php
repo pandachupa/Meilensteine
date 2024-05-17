@@ -130,13 +130,13 @@ include 'gerichte_array.php';
                 <td>Preis Intern</td>
                 <td>Preis extern</td>
             </tr>
-            <?php foreach ($gerichte as $gericht): ?>
+            <?php foreach ($gerichte as $gericht): ?> <!-- Variable wird nicht richtig erkannt,klappt aber trotzdem?-->
                 <tr>
                     <td><?php echo $gericht['name']; ?></td>
                     <td><?php echo $gericht['preisIntern']; ?></td>
                     <td><?php echo $gericht['preisExtern']; ?></td>
                 </tr>
-                <tr>
+                <tr> <!--Bilder werden nicht richtig angezeigt, weiß nicht woran es liegt, Pfad???-->
                     <td colspan="3"><img src="werbeseite/<?php echo $gericht['bild']; ?>" alt="<?php echo $gericht['name']; ?>" class="gerichtsbild"></td>
                 </tr>
             <?php endforeach; ?>
