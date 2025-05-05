@@ -1,10 +1,36 @@
-<!--
- - Praktikum DBWT. Autoren:
- - Lara, Devos, 3649406
- - Kyra, Becker, 3594605
- -->
 <?php
-include 'gerichte_array.php';
+/**
+ * Praktikum DBWT. Autoren:
+ * Lara, Devos, 3649406
+ * Lennox, Bäcker, 3727405
+ */
+//include 'gerichte_array.php';
+$gerichte = [
+    [
+        'name' => 'Rindfleisch mit Bambus, Kaiserschoten und rotem Paprika, dazu Mie Nudeln',
+        'preisIntern' => '3,50',
+        'preisExtern' => '6,20',
+        'bild' => 'mienudeln.jpeg'
+    ],
+    [
+        'name' => 'Spinatrisotto mit Samosateigecken und gemischter Salat',
+        'preisIntern' => '2,90',
+        'preisExtern' => '5,30',
+        'bild' => 'spinat-risotto.jpg'
+    ],
+    [
+        'name' => 'Vegetarische Tortellini',
+        'preisIntern' => '3,00',
+        'preisExtern' => '5,50',
+        'bild' => 'vegetarische-tortellini-pfanne.jpg'
+    ],
+    [
+        'name' => 'Kartoffelcurry',
+        'preisIntern' => '3,20',
+        'preisExtern' => '5,90',
+        'bild' => 'kartoffelcurry.jpg'
+    ],
+];
 ?>
 
 <!DOCTYPE html>
@@ -142,7 +168,7 @@ include 'gerichte_array.php';
                     <td><?php echo $gericht['preisExtern']; ?></td>
                 </tr>
                 <tr> <!--Bilder werden nicht richtig angezeigt, weiß nicht woran es liegt, Pfad???-->
-                    <td colspan="3"><img src="werbeseite/<?php echo $gericht['bild']; ?>" alt="<?php echo $gericht['name']; ?>" class="gerichtsbild"></td>
+                    <td colspan="3"><img src="<?php echo $gericht['bild']; ?>" alt="<?php echo $gericht['name']; ?>" class="gerichtsbild"></td>
                 </tr>
             <?php endforeach; ?>
         </table>
@@ -194,7 +220,7 @@ include 'gerichte_array.php';
 <hr>
 <footer id="foot">
     <div class="footer_inhalt">(c) E-Mensa GmbH</div>
-    <div class="footer_inhalt">Lara Devos, Kyra Becker</div>
+    <div class="footer_inhalt">Lara Devos, Lennox Bäcker</div>
     <div class="footer_inhalt impressum">Impressum</div>
 </footer>
 </body>

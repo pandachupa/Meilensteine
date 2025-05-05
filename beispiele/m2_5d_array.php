@@ -1,8 +1,3 @@
-<!--
- - Praktikum DBWT. Autoren:
- - Lara, Devos, 3649406
- - Kyra, Becker, 3594605
- -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -22,6 +17,11 @@
 </head>
 <body>
 <?php
+/**
+ * Praktikum DBWT. Autoren:
+ * Lara, Devos, 3649406
+ * Lennox, Bäcker, 3727405
+ */
 $famousMeals = [
     1 => ['name' => 'Currywurst mit Pommes', 'winner' => [2001, 2003, 2007, 2010, 2020]],
     2 => ['name' => 'Hähnchencrossies mit Paprikareis', 'winner' => [2002, 2004, 2008]],

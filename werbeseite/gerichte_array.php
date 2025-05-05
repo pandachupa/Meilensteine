@@ -1,10 +1,9 @@
-<!--
- - Praktikum DBWT. Autoren:
- - Lara, Devos, 3649406
- - Kyra, Becker, 3594605
- -->
 <?php
-
+/**
+ * Praktikum DBWT. Autoren:
+ * Lara, Devos, 3649406
+ * Lennox, Bäcker, 3727405
+ */
 $gerichte = [
     [
         'name' => 'Rindfleisch mit Bambus, Kaiserschoten und rotem Paprika, dazu Mie Nudeln',

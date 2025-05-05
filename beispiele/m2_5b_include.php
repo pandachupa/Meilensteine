@@ -1,10 +1,9 @@
-<!--
- - Praktikum DBWT. Autoren:
- - Lara, Devos, 3649406
- - Kyra, Becker, 3594605
- -->
 <?php
-
+/**
+ * Praktikum DBWT. Autoren:
+ * Lara, Devos, 3649406
+ * Lennox, Bäcker, 3727405
+ */
 include 'm2_5a_standardparameter.php';
 
 $ergebnis1 = addieren(2, 3);

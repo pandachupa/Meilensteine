@@ -1,7 +1,7 @@
 <!--
  - Praktikum DBWT. Autoren:
  - Lara, Devos, 3649406
- - Kyra, Becker, 3594605
+ - Lennox, Bäcker, 3727405
  -->
 <?php
 echo "Erstes PHP-Skript <br>";

@@ -1,9 +1,9 @@
-<!--
- - Praktikum DBWT. Autoren:
- - Lara, Devos, 3649406
- - Kyra, Becker, 3594605
- -->
 <?php
+/**
+ * Praktikum DBWT. Autoren:
+ * Lara, Devos, 3649406
+ * Lennox, Bäcker, 3727405
+ */
 // Validation von Eingaben
 function validate_input($data): string {
     // Trimmen und HTML-Sonderzeichen in $data bereinigen, um XSS-Angriffe zu verhindern

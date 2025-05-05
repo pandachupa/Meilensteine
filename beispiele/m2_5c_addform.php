@@ -27,6 +27,11 @@
 </form>
 
 <?php
+/**
+ * Praktikum DBWT. Autoren:
+ * Lara, Devos, 3649406
+ * Lennox, Bäcker, 3727405
+ */
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { //nur wenn post methode verwendet wurde
     $a = isset($_POST['a']) ? (float)$_POST['a'] : 0;
     $b = isset($_POST['b']) ? (float)$_POST['b'] : 0;

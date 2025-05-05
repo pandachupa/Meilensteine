@@ -1,10 +1,10 @@
-<!--
- - Praktikum DBWT. Autoren:
- - Lara, Devos, 3649406
- - Kyra, Becker, 3594605
- -->
-<?php
+<?php //falsch man musste ein formular machen
 // Funktion zur Suche nach dem Suchwort in der Datei
+/**
+ * Praktikum DBWT. Autoren:
+ * Lara, Devos, 3649406
+ * Lennox, Bäcker, 3727405
+ */
 function findeUebersetzung($suchwort, $dateipfad) {
     // gibt es die Datei?
     if (!file_exists($dateipfad)) {

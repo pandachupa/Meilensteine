@@ -1,10 +1,9 @@
-<!--
- - Praktikum DBWT. Autoren:
- - Lara, Devos, 3649406
- - Kyra, Becker, 3594605
- -->
-
 <?php
+/**
+ * Praktikum DBWT. Autoren:
+ * Lara, Devos, 3649406
+ * Lennox, Bäcker, 3727405
+ */
 // Definieren der konstanten GET-Parameter
 const GET_PARAM_MIN_STARS = 'search_min_stars'; // GET-Parameter für die Mindestanzahl von Sternen
 const GET_PARAM_SEARCH_TEXT = 'search_text'; // GET-Parameter für den Suchtext
@@ -17,11 +16,11 @@ $dynamic_texts = [
     'de' => [
         'title' => 'Gericht: ',
         'description' => 'Die Süßkartoffeln werden vorsichtig aufgeschnitten und der Frischkäse eingefüllt.',
-        'filter_label' => 'Allergene:',
+        'filter_label' => 'Allergene',
         'search_placeholder' => 'Suchen',
         'search_button' => 'Suchen',
         'ratings_heading' => 'Bewertungen (Insgesamt: ',
-        'stars' => 'Sterne',
+        'stars' => 'Sterne)',
         'author' => 'Autor/in',
         'top_button' => 'Top',
         'flopp_button' => 'Flopp'
@@ -29,7 +28,7 @@ $dynamic_texts = [
     'en' => [
         'title' => 'Dish: ',
         'description' => 'The sweet potatoes are carefully cut open and filled with cream cheese.',
-        'filter_label' => 'Allergens:',
+        'filter_label' => 'Allergens',
         'search_placeholder' => 'Search',
         'search_button' => 'Search',
         'ratings_heading' => 'Ratings (Total: ',
@@ -99,7 +98,7 @@ $price_extern_formatted = number_format($meal['price_extern'], 2, ',', '.') . '�
 
 $showRatings = [];
 if (!empty($_GET[GET_PARAM_SEARCH_TEXT])) {
-    $searchTerm = strtolower($_GET[GET_PARAM_SEARCH_TEXT]);
+    $searchTerm = strtolower($_GET[GET_PARAM_SEARCH_TEXT]); // groß und kleinschreibung ändern
     foreach ($ratings as $rating) {
         if (strpos(strtolower($rating['text']), $searchTerm) !== false) {
             $showRatings[] = $rating;
