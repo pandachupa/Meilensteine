@@ -10,7 +10,7 @@
     <title>Formular Addform</title>
     <style>
         body {
-            color: aquamarine;
+            color: hotpink;
         }
     </style>
 </head>
@@ -22,7 +22,7 @@
     <label for="b">b:</label>
     <input type="text" id="b" name="b" required>
     <br>
-    <button type="submit" name="operation" value="add">Addieren</button>
+    <button type="submit" name="operation" value="add">Addieren</button> <!--welche Rechenart wird ausgeführt??-->
     <button type="submit" name="operation" value="multiply">Multiplizieren</button>
 </form>
 

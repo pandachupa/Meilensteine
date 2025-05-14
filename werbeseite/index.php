@@ -4,7 +4,8 @@
  * Lara, Devos, 3649406
  * Lennox, Bäcker, 3727405
  */
-//include 'gerichte_array.php';
+include 'gerichte_array.php';
+include 'newsletter_anmeldungen.php';
 $gerichte = [
     [
         'name' => 'Rindfleisch mit Bambus, Kaiserschoten und rotem Paprika, dazu Mie Nudeln',
@@ -31,6 +32,21 @@ $gerichte = [
         'bild' => 'kartoffelcurry.jpg'
     ],
 ];
+// Besucherzähler (einfach)
+$besucherDatei = 'besucher.txt';
+$besucher = 0;
+
+if (file_exists($besucherDatei)) {
+    $besucher = (int) file_get_contents($besucherDatei);
+}
+$besucher++;
+file_put_contents($besucherDatei, $besucher);
+
+$anzahlGerichte = count($gerichte);
+
+$newsletterDatei = 'newsletter_anmeldungen.txt';
+$anzahlAnmeldungen = file_exists($newsletterDatei) ? count(file($newsletterDatei)) : 0;
+
 ?>
 
 <!DOCTYPE html>
@@ -120,6 +136,9 @@ $gerichte = [
             justify-content: space-between;
             padding: 60px;
             }
+        .zahlenInhalt {
+            margin: 60px;
+        }
 
 
     </style>
@@ -175,37 +194,42 @@ $gerichte = [
 
     <h1 id="drei">E-Mensa in Zahlen</h1>
     <div class="Zahlen">
-        <p>x Besuche</p>
-        <p>y Anmeldungen Newsletter</p>
-        <p>z Speisen</p>
+        <p class = "zahlenInhalt"><?php echo $besucher; ?> Besuche</p>
+        <p class = "zahlenInhalt"><?php echo $anzahlAnmeldungen; ?> Anmeldungen Newsletter</p>
+        <p class = "zahlenInhalt"><?php echo $anzahlGerichte; ?> Speisen</p>
     </div>
 
     <!--interesse geweckt, Formular-->
 
     <h1 id="vier">Interesse geweckt? Wir informieren Sie!</h1>
 
-    <form>
-        <label for="name"> Ihr Name: </label><br>
-        <input type="text" id="name" name="name" required> <br><br>
+    <form method="post" action="index.php">
+        <label for="anrede">Anrede:</label><br>
+        <select name="anrede" id="anrede">
+            <option value="Herr">Herr</option>
+            <option value="Frau">Frau</option>
+        </select><br><br>
 
-        <label for="email"> Ihre Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+        <label for="vorname">Vorname:</label><br>
+        <input type="text" name="vorname" id="vorname" required><br><br>
 
-        <label for="sprache"> Sprache wählen:</label><br>
-        <select id="sprache" name="sprache">
-            <option value="englisch"> Englisch</option>
-            <option value="deutsch"> Deutsch</option>
-            <option value="französisch"> Französisch</option>
+        <label for="nachname">Nachname:</label><br>
+        <input type="text" name="nachname" id="nachname" required><br><br>
 
+        <label for="email">E-Mail:</label><br>
+        <input type="email" name="email" id="email" required><br><br>
 
-        </select> <br><br>
+        <input type="checkbox" name="datenschutz" id="datenschutz" required>
+        <label for="datenschutz">Ich stimme den Datenschutzbestimmungen zu</label><br><br>
 
-        <input type="checkbox" id="datenschutz" name="datenschutz" required>
-        <label for="datenschutz"> Den Datenschutzbestimmungen stimme ich zu</label><br>
-        <input type="submit" value="Zum Newsletter anmelden">
-
+        <input type="submit" value="Anmelden">
     </form>
 
+    <?php
+     foreach ($fehlermeldungen as $f) {
+       echo  "<p style=\"color: red;\">" . $f . "</p>";
+    }
+    ?>
 
     <h1 id="fuenf">Das ist uns wichtig</h1>
     <ul>

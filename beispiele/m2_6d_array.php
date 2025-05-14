@@ -35,7 +35,7 @@ foreach ($famousMeals as $meal) {
     echo $meal['name'] . ": ";
     if (is_array($meal['winner'])) {
         sort($meal['winner']);
-        echo implode(", ", $meal['winner']);
+        echo implode(", ", $meal['winner']); // implode fügt die Jahre durch Kommas zusammen
     } else {
         echo $meal['winner'];
     }
@@ -45,17 +45,17 @@ echo "</ol>";
 
 //gewinner berechnen
 function jahreOhneGewinner($meals, $startYear, $endYear) {
-    $allYears = range($startYear, $endYear);
+    $allYears = range($startYear, $endYear); // erstellt array
     $winnerYears = [];
     foreach ($meals as $meal) {
         if (is_array($meal['winner'])) {
             $winnerYears = array_merge($winnerYears, $meal['winner']);
         } else {
-            $winnerYears[] = $meal['winner'];
+            $winnerYears[] = $meal['winner']; // wenn im array meal nur ein Eintrag ist
         }
     }
-    $winnerYears = array_unique($winnerYears);
-    $yearsWithoutWinners = array_diff($allYears, $winnerYears);
+    $winnerYears = array_unique($winnerYears); // falls zwei im gleichen Jahr
+    $yearsWithoutWinners = array_diff($allYears, $winnerYears); //alle Jahre, die NICHT in $winnerYears vorkommen
     return $yearsWithoutWinners;
 }
 

@@ -4,7 +4,7 @@
  * Lara, Devos, 3649406
  * Lennox, Bäcker, 3727405
  */
-include 'm2_5a_standardparameter.php';
+include 'm2_6a_standardparameter.php';
 
 $ergebnis1 = addieren(2, 3);
 $ergebnis2 = addieren(7);

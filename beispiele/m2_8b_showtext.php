@@ -1,4 +1,21 @@
-<?php //falsch man musste ein formular machen
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Unser Übersetzer</title>
+</head>
+<body>
+<h1>Deutsch-Englisch Übersetzung</h1>
+
+<form method="get">
+    <label for="suche">Suchwort (Englisch):</label>
+    <input type="text" name="suche" id="suche" required>
+    <input type="submit" value="Übersetzung suchen">
+</form>
+
+<hr>
+
+<?php
 // Funktion zur Suche nach dem Suchwort in der Datei
 /**
  * Praktikum DBWT. Autoren:
@@ -12,15 +29,15 @@ function findeUebersetzung($suchwort, $dateipfad) {
     }
 
     // Datei öffnen
-    $datei = fopen($dateipfad, "r");
+    $datei = fopen($dateipfad, "r"); // Pfad zur en.txt
     if (!$datei) {
         return "Fehler beim Öffnen der Datei.";
     }
 
     // Suchwort suchen
     while (($zeile = fgets($datei)) !== false) {
-        $teile = explode(";", $zeile);
-        if (count($teile) >= 2 && trim($teile[0]) === $suchwort) {
+        $teile = explode(";", $zeile); //prüft, ob die Zeile korrekt formatiert ist (mindestens 2 Teile).
+        if (count($teile) >= 2 && trim($teile[0]) === $suchwort) { // teil 0 englisch teil 1 deutsch
             fclose($datei);
             return "Die Übersetzung von '$suchwort' lautet: " . trim($teile[1]);
         }
@@ -39,7 +56,4 @@ if (isset($_GET['suche'])) {
     // Funktion aufrufen und Ergebnis ausgeben
     $ergebnis = findeUebersetzung($suchwort, $datei);
     echo $ergebnis;
-} else {
-    // wenn nicht gefunden
-    echo "Bitte geben Sie ein Suchwort über den GET-Parameter 'suche' an.";
 }

@@ -1,0 +1,6 @@
+{"anrede":"Frau","vorname":"lara","nachname":"Devos","email":"lara.devos@gmail.com","intervall":""}
+{"anrede":"Herr","vorname":"Lennox","nachname":"B\u00e4cker","email":"lennox.baecker@gmail.com","intervall":""}
+{"anrede":"Herr","vorname":"Lennox","nachname":"B\u00e4cker","email":"lennox.baecker@yahoo.com","intervall":""}
+{"anrede":"Herr","vorname":"l","nachname":"d","email":"lod@gmail.com","intervall":""}
+{"anrede":"Frau","vorname":"lara","nachname":"de","email":"ap@gmail.com","intervall":""}
+{"anrede":"Herr","vorname":"Lennox","nachname":"pp","email":"ap@gmail.com"}

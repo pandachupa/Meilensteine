@@ -23,7 +23,7 @@ $logEntry = aktuellesDatum() . " - " . ClientInformationen() . "\n";
 // hängt Inhalt in die datei an
 file_put_contents($logFile, $logEntry, FILE_APPEND);
 
-$logContent = file_get_contents($logFile);
+$logContent = file_get_contents($logFile); //Liest den gesamten Inhalt der Logdatei
 
 //Bestätigung
 echo "Der Logdatei-Eintrag wurde erfolgreich erstellt.<br><pre>$logContent</pre>";
